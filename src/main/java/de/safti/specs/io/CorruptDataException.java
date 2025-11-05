@@ -1,7 +1,7 @@
 package de.safti.specs.io;
 
-public class ReadOutOfBoundException extends RuntimeException {
-    public ReadOutOfBoundException(String message) {
+public class CorruptDataException extends RuntimeException {
+    public CorruptDataException(String message) {
         super(message);
     }
 }

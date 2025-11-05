@@ -1,15 +1,24 @@
-package de.safti.specs.spec;
+package de.safti.specs.layout;
 
 import de.safti.specs.annotations.Spec;
-
-import java.io.ByteArrayOutputStream;
+import de.safti.specs.io.BinaryData;
+import de.safti.specs.io.BinaryWriter;
+import de.safti.specs.layout.common.SpecField;
+import org.jetbrains.annotations.Nullable;
 
 public interface SpecLayout {
 
     Class<? extends Spec> getSpecClass();
 
-    Spec create(byte[] data);
+    Spec create(BinaryData data);
 
-    void write(Spec spec, ByteArrayOutputStream baos);
+    Spec createInstance();
+
+    void write(Spec spec, BinaryWriter writer);
+
+    @Nullable
+    SpecField getField(String name);
+
+    SpecField[] getFields();
 
 }

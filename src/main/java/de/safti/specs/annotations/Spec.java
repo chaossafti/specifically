@@ -1,4 +1,4 @@
 package de.safti.specs.annotations;
 
-public @interface Spec {
+public interface Spec {
 }
